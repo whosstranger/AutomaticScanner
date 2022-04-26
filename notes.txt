@@ -1,0 +1,4 @@
+If you have a problem with nmap release, follow these steps:
+  1. pip uninstall nmap
+  2. pip uninstall python-nmap
+  3. pip install python-nmap
