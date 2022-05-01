@@ -58,8 +58,8 @@ elif option == "3": #Fuzzing
 elif option == "4": #Help
     print("""Choose One:
                 1 - nmap.
-                2 - wfuzz. """)
-    help = input("Which one do you need help? ")
+                2 - wfuzz. \n """)
+    help = input("Which one do you need help?: " )
     if help == "1":
         print("""Quick and easy command: 
                     -p- --open: Search only open ports
@@ -70,7 +70,6 @@ elif option == "4": #Help
     elif help == "2":
         print("""Quick and easy command:
                     hc: Dont show the status code. 
-                    
-
-
+                    -w: Dictionary to fuzzing
+                    -u: WebSite
                     """)
