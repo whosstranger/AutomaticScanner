@@ -1,4 +1,4 @@
-import sys, pyfiglet, csv, wfuzz, signal, nmap, os
+import sys, pyfiglet, csv, wfuzz, signal, nmap, os, time
 
 def def_handler(sig, frame):
     print("\n\n[!] Going out...\n")
@@ -23,7 +23,7 @@ ep = nmap.PortScanner()
 
 if option == "1": #Scan ports        
     ip = input("Place the IP: ")
-    print("\n Scanning... \n")
+    print("\n Scanning... \n") 
     ep.scan(hosts = ip, arguments = '-p- --open --min-rate 5000 -n -Pn')
     print("Command executed: " + ep.command_line() + '\n') #Showing the command
     for host in ep.all_hosts():
@@ -38,23 +38,31 @@ if option == "1": #Scan ports
     if info == "y":
         with open("Ports.txt","w") as file:
             file.write("Port: " + str(port)) 
-            file.write("   State: open")
+            file.write("   State: open")           
         print("Saved information")
     elif info == "n":
         print("\n [!] Going out...")
 elif option == "2": #Services
     a = input("Place the IP: ")
-    print("Scanning...")
+    print("\n Scanning... \n")
     ep.scan(hosts = a, arguments = '-sCV -n -Pn')
-    print("Command executed: " + ep.command_line()) #Showing the command
-    print(ep.csv())
+    print("Command executed: " + ep.command_line() + '\n') #Showing the command
+    print("gonorrea")
 
 elif option == "3": #Fuzzing
+    print("\n Example: http://127.0.0.1/FUZZ - Dont forget FUZZ \n")
     z = input('Place the URL: ')
-    print("Example: http://127.0.0.1/FUZZ")
-    for r in wfuzz.fuzz(url=z, hc=[404], payloads=[("file",dict(fn="/usr/share/wfuzz/wordlist/general/big.txt"))]):
+    print("\n Scanning... \n")
+    s = wfuzz.FuzzSession(url=z)
+    for r in s.fuzz(hc=[404], payloads=[("file",dict(fn="/home/stranger/Documents/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt"))]):
         print(r)
-
+    info = input("\n Do you want to safe the information? (y/n): ")
+    if info == "y":
+        with open("Fuzzing","w") as file:
+            file.write(str(r))
+        print("\n [!] Saved information")
+    elif info =="n":
+        print("\n [!] Going out...")
 elif option == "4": #Help
     print("""Choose One:
                 1 - nmap.
@@ -69,7 +77,9 @@ elif option == "4": #Help
                     """)
     elif help == "2":
         print("""Quick and easy command:
-                    hc: Dont show the status code. 
+                    hc: Dont show the status code.
+                    hh: Hide characters
                     -w: Dictionary to fuzzing
                     -u: WebSite
                     """)
+
