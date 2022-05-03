@@ -7,7 +7,9 @@
 
 ## How it works
 
-
+ ```sh
+   pip install requirements.txt
+ ```
 ## Contact
 - [WhosStranger](https://whosstranger.github.io/) my WebSite
 - [WhosStranger](https://app.hackthebox.com/profile/805901) on HackTheBox
