@@ -1,4 +1,3 @@
-pip install python-nmap
-pip install pyfiglet
-pip install wfuzz
-
+python-nmap
+pyfiglet
+wfuzz
