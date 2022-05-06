@@ -52,9 +52,11 @@ elif option == "2": #Services
 elif option == "3": #Fuzzing
     print("\n Example: http://127.0.0.1/FUZZ - Dont forget FUZZ \n")
     z = input('Place the URL: ')
+    print("\n Example: /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt \n")
+    dictpwd = input('Place the dictionary: ')
     print("\n Scanning... \n")
     s = wfuzz.FuzzSession(url=z)
-    for r in s.fuzz(hc=[404], payloads=[("file",dict(fn="/home/stranger/Documents/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt"))]):
+    for r in s.fuzz(hc=[404], payloads=[("file",dict(fn=dictpwd))]):
         print(r)
     info = input("\n Do you want to safe the information? (y/n): ")
     if info == "y":
@@ -82,4 +84,3 @@ elif option == "4": #Help
                     -w: Dictionary to fuzzing
                     -u: WebSite
                     """)
-
