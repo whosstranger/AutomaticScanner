@@ -47,14 +47,15 @@ elif option == "2": #Services
     print("\n Scanning... \n")
     ep.scan(hosts = a, arguments = '-sCV -n -Pn')
     print("Command executed: " + ep.command_line() + '\n') #Showing the command
-    print("gonorrea")
+    print("Prueba")
 
 elif option == "3": #Fuzzing
     print("\n Example: http://127.0.0.1/FUZZ - Dont forget FUZZ \n")
     z = input('Place the URL: ')
+    url = input('Place the Directory: ')
     print("\n Scanning... \n")
     s = wfuzz.FuzzSession(url=z)
-    for r in s.fuzz(hc=[404], payloads=[("file",dict(fn="/home/stranger/Documents/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt"))]):
+    for r in s.fuzz(hc=[404],t=[200],payloads=[("file",dict(fn=url))]):
         print(r)
     info = input("\n Do you want to safe the information? (y/n): ")
     if info == "y":
