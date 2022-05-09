@@ -25,6 +25,16 @@ Script execution.
   python3 Scanner.py 127.0.0.1
 ```
 You can choose 4 different options.
+  1. Scan Ports.
+  2. Scan Services.
+  3. Fuzzing.
+  4. Help.
 
+Selection 1.
+```sh
+  Place the ip: 127.0.0.1
+```
+When the IP address is sent, the nmap tool will start scanning the open ports of the sent IP. At the end of the scan it will display the open ports of the services and ask if you want to save the information obtained.
 
+If the answer is "Y" the information will be saved in the current directory.
 
