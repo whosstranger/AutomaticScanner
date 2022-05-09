@@ -11,7 +11,7 @@ I have created this script which allows to perform all the reconnaissance phase 
 
 -Wfuzz is used to discover hidden routes in web sites.
 
-## Usage 🔎:
+## Usage! 🔎
 
 Assign execution permissions.
 
