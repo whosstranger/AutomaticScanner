@@ -1,6 +1,6 @@
 # Automatic Scanner
 <h1 align="center">
-  <img src="https://github.com/whosstranger/Scanner/blob/master/Images/Scanner.gif" alt="WhosStranger" />
+  <img src="https://github.com/whosstranger/AutomaticScanner/blob/master/Images/Automatic.gif" alt="WhosStranger" />
 </h1>
    
 ## Hey! 👋
