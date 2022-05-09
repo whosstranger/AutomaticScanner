@@ -48,5 +48,18 @@ When the IP address is sent, the nmap tool will start scanning the services on e
 If the answer is "Y" the information will be saved in the current directory.
 
 Selection 3. 🕵️‍♂️ 
+```sh 
+Place the URL: http://127.0.0.1/FUZZ 
+``` 
+You must attach the URL and the word FUZZ where you want to make the scan.
 
+```sh 
+Place the Directory: /home/stranger/Documents/SecLists/Fuzzing/LDAP.Fuzzing.txt
+```
+When you have added the URL with the word FUZZ, you must attach the path where the dictionaries are located to perform the search.
 
+If you do not know where to find these dictionaries, I attach a repository in which there are several fuzzing dictionaries.
+
+```
+https://github.com/danielmiessler/SecLists
+```
