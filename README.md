@@ -8,6 +8,7 @@
 I have created this script which allows to perform all the reconnaissance phase on CTF machines, it contains the nmap tool and wfuzz.
 
 -Nmap is used for open port and port-associated services reconnaissance.
+
 -Wfuzz is used to discover hidden routes in web sites.
 
 ## Usage:
@@ -18,7 +19,12 @@ Assign execution permissions.
  chmod +x AutomaticScanner.py
 ```
 
+Script execution.
+
 ```sh
   python3 Scanner.py 127.0.0.1
 ```
+You can choose 4 different options.
+
+
 
