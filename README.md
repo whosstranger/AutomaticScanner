@@ -66,7 +66,7 @@ https://github.com/danielmiessler/SecLists
 
 When the scan is finished you will be asked if you want to save the information.
 
-When you say "Y" it will save to the current address.
+If the answer is "Y" the information will be saved in the current directory.
 
 Selection 4. 🕵️‍♂️
 
