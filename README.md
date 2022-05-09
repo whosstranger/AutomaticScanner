@@ -30,7 +30,7 @@ You can choose 4 different options.
   3. Fuzzing.
   4. Help.
 
-Selection 1.
+Selection 1. 🕵️‍♂️
 ```sh
 Place the ip: 127.0.0.1
 ```
@@ -38,7 +38,7 @@ When the IP address is sent, the nmap tool will start scanning the open ports of
 
 If the answer is "Y" the information will be saved in the current directory.
 
-Selection 2.
+Selection 2. 🕵️‍♂️
 ```sh 
 Place the ip: 127.0.0.1
 ```
@@ -47,5 +47,6 @@ When the IP address is sent, the nmap tool will start scanning the services on e
 
 If the answer is "Y" the information will be saved in the current directory.
 
-Selection 3.
+Selection 3. 🕵️‍♂️ 
+
 
