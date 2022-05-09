@@ -11,7 +11,7 @@ I have created this script which allows to perform all the reconnaissance phase 
 
 -Wfuzz is used to discover hidden routes in web sites.
 
-## Usage:
+## Usage 🔎:
 
 Assign execution permissions.
 
@@ -63,3 +63,11 @@ If you do not know where to find these dictionaries, I attach a repository in wh
 ```
 https://github.com/danielmiessler/SecLists
 ```
+
+When the scan is finished you will be asked if you want to save the information.
+
+When you say "Y" it will save to the current address.
+
+Selection 4. 🕵️‍♂️
+
+The last option is to give an explanation of how each tool is configured.
