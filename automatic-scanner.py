@@ -13,7 +13,7 @@ print(banner)
 #Choose the option
 print("""Choose One:
         1 - Scan ports.
-        2 - Scan services.
+        2 - Scan services (Local Way).
         3 - Fuzzing.
         4 - Help.
         """)
@@ -24,7 +24,7 @@ ep = nmap.PortScanner()
 if option == "1": #Scan ports        
     ip = input("Place the IP: ")
     print("\n Scanning... \n") 
-    ep.scan(hosts = ip, arguments = '-p- --open --min-rate 5000 -n -Pn')
+    ep.scan(hosts = ip, arguments = '-p- --open --min-rate 5000 -n -Pn -oN Ports')
     print("Command executed: " + ep.command_line() + '\n') #Showing the command
     for host in ep.all_hosts():
         for proto in ep[host].all_protocols():
@@ -43,12 +43,7 @@ if option == "1": #Scan ports
     elif info == "n":
         print("\n [!] Going out...")
 elif option == "2": #Services
-    a = input("Place the IP: ")
-    print("\n Scanning... \n")
-    ep.scan(hosts = a, arguments = '-sCV -n -Pn')
-    print("Command executed: " + ep.command_line() + '\n') #Showing the command
-    print("Prueba")
-
+    print("\nType the following command in a local terminal: \nnmap -sCV -vvv -n -Pn IP -oN DocumentName")
 elif option == "3": #Fuzzing
     print("\n Example: http://127.0.0.1/FUZZ - Dont forget FUZZ \n")
     z = input('Place the URL: ')
