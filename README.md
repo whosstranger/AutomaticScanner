@@ -13,15 +13,16 @@ I have created this script which allows to perform all the reconnaissance phase 
 
 ## Usage! 🔎
 
-Installing the necessary requirements.
-
-```sh
-pip install requirements.txt
-```
 Clone the repository
 
 ```sh
 git clone https://github.com/whosstranger/AutomaticScanner.git
+```
+
+Installing the necessary requirements.
+
+```sh
+pip install requirements.txt
 ```
 
 Assign execution permissions.
