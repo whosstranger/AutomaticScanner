@@ -14,6 +14,13 @@ grayColour="\e[0;37m\033[1m"
 
 echo -e "\n${yellowColour}[!]${endColour} ${turquoiseColour}By WhosStranger${endColour}"
 
+trap ctrl_c INT
+
+function ctrl_c(){
+	echo -e "\n${yellowColour}[*]${endColour} ${purpleColour}Leaving...${endColour}"
+	exit 0
+}
+
 function tools(){
  
   dependecies=(nmap wfuzz)
@@ -49,7 +56,12 @@ function scan(){
     nmap -sCV -n -Pn $IP > Services
     echo -e "\n${yellowColour}[*]${endColour} ${blueColour}Scanning and information saved successfully.${endColour}"
   elif [ "$Option" == "w" ];then
-    echo "wfuzz"
+    echo -ne "\n${yellowColour}[+]${endColour} ${blueColour}Type the IP address: ${endColour}" && read URL
+    echo -e "\n${yellowColour}[!]${endColour} ${purpleColour}Starting fuzzing...${endColour}\n"
+    wfuzz --hc 404 -t 500 -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$URL/FUZZ > Results 2>&1
+    grep -Ev '404' Results > Fuzzing
+    rm Results
+    echo -e "\n${yellowColour}[*]${endColour} ${blueColour}Fuzzing and information saved successfully.${endColour}"
   else 
     echo "\n ${yellowColour}{X}${endColour} ${blueColour}Select a correct option.${endColour}"
   fi
