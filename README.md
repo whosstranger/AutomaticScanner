@@ -28,7 +28,7 @@ sudo su
 Assign execution permissions.
 
 ```sh
-chmod +x AutomaticScanner.py
+chmod +x scanner.sh
 ```
 
 Script execution.
