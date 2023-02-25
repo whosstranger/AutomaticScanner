@@ -5,11 +5,11 @@
    
 ## About it
 
-Tool created in bash to perform all the reconnaissance phase on CTF machines, contains the nmap and wfuzz tools.
+Tool created in bash to perform all the reconnaissance phase on CTF machines, contains the nmap and ffuf tools.
 
 - Nmap is used for open port and port-associated services reconnaissance.
 
-- Wfuzz is used to discover hidden routes in web sites.
+- ffuf is used to discover hidden routes in web sites.
 
 ## Execution
 
