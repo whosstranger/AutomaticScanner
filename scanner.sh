@@ -23,7 +23,7 @@ function ctrl_c(){
 
 function tools(){
  
-  dependecies=(nmap wfuzz)
+  dependecies=(nmap ffuf)
   echo -e "\n${yellowColour}[!]${endColour} ${purpleColour}Checking necessary tools${endColour}" 
   
   for program in "${dependecies[@]}"; do
@@ -46,7 +46,7 @@ function tools(){
 function scan(){
   sleep 1; clear
   echo -e "\n${yellowColour}[-]${endColour} ${blueColour}Nmap = ${endColour}${purpleColour}n${endColour}"
-  echo -e "\n${yellowColour}[-]${endColour} ${blueColour}Wfuzz = ${endColour}${purpleColour}w${endColour}"
+  echo -e "\n${yellowColour}[-]${endColour} ${blueColour}ffuf = ${endColour}${purpleColour}w${endColour}"
   echo -ne "\n${yellowColour}[?]${endColour} ${blueColour}Choose an option: ${endColour}" && read Option
 
   if [ "$Option" == "n" ];then
@@ -58,10 +58,8 @@ function scan(){
   elif [ "$Option" == "w" ];then
     echo -ne "\n${yellowColour}[+]${endColour} ${blueColour}Type the IP address: ${endColour}" && read URL
     echo -e "\n${yellowColour}[!]${endColour} ${purpleColour}Starting fuzzing...${endColour}\n"
-    wfuzz --hc 404 -t 500 -c -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$URL/FUZZ > Results 2>&1
-    grep -Ev '404' Results > Fuzzing
-    rm Results
-    echo -e "\n${yellowColour}[*]${endColour} ${blueColour}Fuzzing and information saved successfully.${endColour}"
+    ffuf -t 1000 -mc 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$URL/FUZZ
+    echo -e "\n${yellowColour}[*]${endColour} ${blueColour}Fuzzing successfully.${endColour}"
   else 
     echo "\n ${yellowColour}{X}${endColour} ${blueColour}Select a correct option.${endColour}"
   fi
